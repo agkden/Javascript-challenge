@@ -4,13 +4,19 @@ var tableData = data;
 // Get a reference to the table body
 var tbody = d3.select("tbody");
 
-// append the  table to the web page 
-tableData.forEach((ufoReport) => {
-  var trow = tbody.append("tr");
-  Object.entries(ufoReport).forEach(([key, value]) => {
-    trow.append('td').text(value);
+// render table to the web page
+buildTable(tableData);
+
+// Create a function to render table
+function buildTable(data) {
+  // append the  table to the web page 
+  data.forEach((ufoReport) => {
+    var row = tbody.append("tr");
+    Object.entries(ufoReport).forEach(([key, value]) => {
+      row.append('td').text(value);
+    });
   });
-});
+}
 
 // -- To Perform Search through the Table -- 
 // Select the button
@@ -41,18 +47,10 @@ function filterSearch() {
   // search through the date column to find rows that match user input
   var filteredData = tableData.filter(date => date.datetime === inputValue); 
 
-  // Print the value to the console
-  //console.log(filteredData)
-
   // render table with filtered data
-  filteredData.forEach((searchResult) => {
-    var row = tbody.append("tr");
-    Object.entries(searchResult).forEach(([k,v]) => {
-      row.append('td').text(v);
-    });
-  });
+  buildTable(filteredData);
 
-};
+}
 
 
 
