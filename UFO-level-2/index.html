@@ -53,10 +53,14 @@
                         <label for="state">Enter a State</label>
                         <input class="form-control" id="state" type="text" placeholder="Enter a State">
                       </li>
-                      <!-- Country Filter -->
+                      <!-- Country Filter with dropdown -->
                       <li class="filter list-group-item">
                         <label for="country">Enter a Country</label>
-                        <input class="form-control" id="country" type="text" placeholder="Enter a Country"> 
+                        <select class="custom-select" id="country">
+                          <option selected>Choose a Country</option>
+                          <option value="us">USA</option>
+                          <option value="ca">Canada</option>
+                        </select> 
                       </li>
                       <!-- Shape Filter -->
                       <li class="filter list-group-item">
