@@ -46,25 +46,25 @@ function filterMultiSearch() {
     // --> City
   var inputCity = d3.select("#city").property("value");
   if (inputCity) {
-    filteredData = filteredData.filter(xcity => xcity.city === inputCity);
+    filteredData = filteredData.filter(xcity => xcity.city === inputCity.toLowerCase());
   };
 
     // --> State
   var inputState = d3.select("#state").property("value");
   if (inputState) {
-    filteredData = filteredData.filter(xstate => xstate.state === inputState);
+    filteredData = filteredData.filter(xstate => xstate.state === inputState.toLowerCase());
   };
 
     // --> Country
   var inputCountry = d3.select("#country").property("value");
   if (inputCountry) {
-    filteredData = filteredData.filter(xcountry => xcountry.country === inputCountry);
+    filteredData = filteredData.filter(xcountry => xcountry.country === inputCountry.toLowerCase());
   };
 
     // --> Shape
   var inputShape = d3.select("#shape").property("value");
   if (inputShape) {
-    filteredData = filteredData.filter(xshape => xshape.shape === inputShape);
+    filteredData = filteredData.filter(xshape => xshape.shape === inputShape.toLowerCase());
   }; 
 
   // render table with filtered data
