@@ -19,13 +19,14 @@ function buildTable(prdata) {
 }
 
 // -- To Perform Search through the Table -- 
-// Select the button
-var button = d3.select("#filter-btn");
+// Select the `Apply Filter` button and create event handler
+d3.select("#filter-btn").on("click", filterMultiSearch);
 
-// Create event handlers 
-button.on("click", filterMultiSearch);
+// Select the country dropdown menu and create event handler
+d3.select("#country-group").on("change", filterMultiSearch);
 
-// Create the Filter function to run for click event
+
+// Create the Filter function to run for both events
 function filterMultiSearch() {
 
   // Clear table before rendering again
